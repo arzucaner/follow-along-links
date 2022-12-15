@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Follow Along Nav</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+      <ul class="menu">
+        <li><a href="">Home</a></li>
+        <li><a href="">Order Status</a></li>
+        <li><a href="">Tweets</a></li>
+        <li><a href="">Read Our History</a></li>
+        <li><a href="">Contact Us</a></li>
+      </ul>
+    </nav>
+    <div class="wrapper">
+        <p>Technical SEO Analyst Becomes a Developer, <a href="">Change the country you live in, then change your career. This should be madness…</a></p>
+        <p>The mystery was what drove me to become an SEO Analyst. It can access information, but the way you use it is entirely up to your ability. You have to think freely. I had completed all the training with my long years of marketing experience and the self-confidence given in my master’s degree, but I had a shortcoming. “Experience”…</p>
+        <p>After working for about 2 years, I solved the experience part. I even became a Technical SEO Analyst. I know myself very well. If I am starting something, I should learn it in all its aspects. But there was something that did not suit me. You can see the result of an action you take in SEO within months.</p>
+    </div>
+    <script>
+        const triggers =document.querySelector('a');
+        const highlight = document.createElement('span');
+        highlight.classList.add('highlight');
+        document.body.append(highlight);
+        
+        function highlightLink() {
+          const linkCoords = this.getBoundingClientRect();
+          console.log(linkCoords);
+          highlight.style.width = `${linkCoords.width}px`;
+          highlight.style.height = `${linkCoords.height}px`;
+          highlight.style.transform = `translate(${linkCoords.left}px, ${linkCoords.top}px)`;
+        }
+        
+        triggers.forEach(a => a.addEventListener('mouseenter', highlightLink));
+    </script>
+    </body>
+</html>
